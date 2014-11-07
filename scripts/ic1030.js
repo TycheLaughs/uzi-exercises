@@ -2,7 +2,7 @@
 // named corresponding to fragment identifiers.
 //
 // This script written By Curran Kelleher October 2014
-// Copied verbatim (with minor modifications to make it specific to this particular project) from Curran Kelleher's example found at
+// Copied verbatim (with minor modifications for specificity) from Curran Kelleher's example found at
 // http://curran.github.io/screencasts/navigation/examples/viewer/#/23
 
 // Wrap everything in an immediately invoked function expression,
