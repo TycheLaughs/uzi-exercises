@@ -8,9 +8,6 @@
   /** @ngInject */
   function MainController($timeout, webDevTec, toastr) {
 
-
-
-
     var vm = this;
 
     vm.awesomeThings = [];
