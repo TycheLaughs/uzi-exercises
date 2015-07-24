@@ -5,7 +5,7 @@
 
     beforeEach(module('reader'));
 
-    var mainCtrl, scope, newsGetter;
+    var mainCtrl, scope, newsGetter, element;
 
     beforeEach(inject(function($controller, $rootScope,_newsGetter_){
       scope = $rootScope.$new();
@@ -64,12 +64,14 @@
     });
 
     describe('Function: toggleMdSelector()', function(){
+
       it('should toggle the Boolean state of showMdList and the class of mdNews between col-md-8 and col-md-12', function(){
+
+
         expect(scope.showMdList).toBe(true);
         scope.toggleMdSelector();
         expect(scope.showMdList).toBe(false);
-
-        //need to test class toggle...
+        //can't seem to figure out how to test the class toggle
 
       });
 

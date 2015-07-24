@@ -3,8 +3,7 @@
 
   angular
     .module('reader')
-    .controller('MainController', function($timeout, newsGetter, $scope) {
-
+    .controller('MainController', function(newsGetter, $scope) {
 
       $scope.newsList = newsGetter.getNews();
       $scope.smallScreenVanisher = false;
@@ -27,15 +26,9 @@
 
       $scope.toggleMdSelector = function (){
           $scope.showMdList = !($scope.showMdList);
-        if(!($scope.showMdList)) {
-          angular.element(document.getElementById('mdNews')).addClass('col-md-12');
-          angular.element(document.getElementById('mdNews')).removeClass('col-md-8');
-        }
-        else{
-          angular.element(document.getElementById('mdNews')).addClass('col-md-8');
-          angular.element(document.getElementById('mdNews')).removeClass('col-md-12');
+          angular.element(document.getElementById('mdNews')).toggleClass('col-md-8');
+          angular.element(document.getElementById('mdNews')).toggleClass('col-md-12');
 
-        }
       };
     });
 
