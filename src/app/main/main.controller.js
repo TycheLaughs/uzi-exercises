@@ -3,16 +3,16 @@
 
   angular
     .module('reader')
-    .controller('MainController', function($timeout, webDevTec, $scope) {
+    .controller('MainController', function($timeout, newsGetter, $scope) {
 
 
-      $scope.newsList = webDevTec.getTec();
+      $scope.newsList = newsGetter.getNews();
       $scope.smallScreenVanisher = false;
       $scope.showMdList = true;
       $scope.selectedNews = 0;
 
       $scope.incrementNews = function(){
-        $scope.selectedNews ++;
+        $scope.selectedNews+=1;
        // console.log($scope.selectedNews);
       };
 
