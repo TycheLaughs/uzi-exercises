@@ -35,7 +35,6 @@
     });
 
     describe('Function: incrementNews()', function(){
-
       it('should increment the index of the news we want to view', function(){
         expect(scope.selectedNews).toBe(0);
         scope.incrementNews();
@@ -60,19 +59,13 @@
         expect(scope.selectedNews).toBe(2);
         expect(scope.smallScreenVanisher).toBe(true);
       });
-
     });
 
     describe('Function: toggleMdSelector()', function(){
-
       it('should toggle the Boolean state of showMdList and the class of mdNews between col-md-8 and col-md-12', function(){
-
-
         expect(scope.showMdList).toBe(true);
         scope.toggleMdSelector();
         expect(scope.showMdList).toBe(false);
-        //can't seem to figure out how to test the class toggle
-
       });
 
     });

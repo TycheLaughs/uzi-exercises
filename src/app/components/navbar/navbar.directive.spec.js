@@ -7,14 +7,15 @@ describe('Directive: blandNavbar', function () {
 
   // load the directive's module
   beforeEach(module('reader'));
-
   var element, scope;
-
-
-  it('should render on the page', inject(function ($compile) {
+  beforeEach(inject(function ($rootScope, $compile) {
+    scope = $rootScope.$new();
     element = angular.element('<bland-navbar></bland-navbar>');
-    element = $compile(element);
-    expect(element).toBeDefined();
-    //..need to test if this actually renders.  Don't think toBeDefined works for that
+    element = $compile(element)(scope);
+    scope.$digest();
+  }));
+
+  it('should render on the page', inject(function () {
+    expect(element.text().trim()).toBe('News Reader');
   }));
 });

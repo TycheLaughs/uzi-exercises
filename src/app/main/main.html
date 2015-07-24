@@ -41,7 +41,7 @@
       </li>
     </ul>
 
-    <div class="visible-md visible-lg col-md-8" id="mdNews" >
+    <div class="visible-md visible-lg" ng-class="{'col-md-8':showMdList, 'col-md-12':!showMdList}" >
       <iframe  ng-src="{{newsList[selectedNews].unescapedUrl|trustUrl}}" width="100%" height="1024px;" sandbox="allow-top-navigation allow-same-origin" >Uh-oh. Looks like your browser doesn't supposrt iframes...</iframe>
     </div>
 

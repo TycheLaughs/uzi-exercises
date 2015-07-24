@@ -26,8 +26,7 @@
 
       $scope.toggleMdSelector = function (){
           $scope.showMdList = !($scope.showMdList);
-          angular.element(document.getElementById('mdNews')).toggleClass('col-md-8');
-          angular.element(document.getElementById('mdNews')).toggleClass('col-md-12');
+
 
       };
     });
