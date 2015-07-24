@@ -20,10 +20,27 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 }
 
 .thumbnail {
-  height: 200px;
+  height: 220px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
 
-  img.pull-right {
-    width: 50px;
+  img{
+    max-height:100px;
+  }
+  iframe{
+    width:100%;
+
+  }
+
+  a{
+    cursor: pointer;
+  }
+  #sideSelector, #sideMdSelector{
+    height: 100vh;
+    overflow-y:scroll;
+    position: absolute;
+
   }
 }
 

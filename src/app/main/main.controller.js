@@ -1,40 +1,44 @@
-(function() {
+
   'use strict';
 
   angular
     .module('reader')
-    .controller('MainController', MainController);
+    .controller('MainController', function($timeout, webDevTec, $scope) {
 
-  /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
 
-    var vm = this;
+      $scope.newsList = webDevTec.getTec();
+      $scope.smallScreenVanisher = false;
+      $scope.showMdList = true;
+      $scope.selectedNews = 0;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1437677604580;
-    vm.showToastr = showToastr;
+      $scope.incrementNews = function(){
+        $scope.selectedNews ++;
+       // console.log($scope.selectedNews);
+      };
 
-    activate();
+      $scope.revealSideSelector = function(){
+        $scope.smallScreenVanisher = false;
+      };
 
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
+      $scope.showNews = function(index){
+        $scope.selectedNews = index;
+        $scope.smallScreenVanisher = true;
+      };
 
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
+      $scope.toggleMdSelector = function (){
+          $scope.showMdList = !($scope.showMdList);
+        if(!($scope.showMdList)) {
+          angular.element(document.getElementById('mdNews')).addClass('col-md-12');
+          angular.element(document.getElementById('mdNews')).removeClass('col-md-8');
+        }
+        else{
+          angular.element(document.getElementById('mdNews')).addClass('col-md-8');
+          angular.element(document.getElementById('mdNews')).removeClass('col-md-12');
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+        }
+      };
+    });
 
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
-  }
-})();
+
+
+
