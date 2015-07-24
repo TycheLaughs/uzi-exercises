@@ -62,7 +62,7 @@
     });
 
     describe('Function: toggleMdSelector()', function(){
-      it('should toggle the Boolean state of showMdList and the class of mdNews between col-md-8 and col-md-12', function(){
+      it('should toggle the Boolean state of showMdList', function(){
         expect(scope.showMdList).toBe(true);
         scope.toggleMdSelector();
         expect(scope.showMdList).toBe(false);
