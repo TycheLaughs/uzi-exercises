@@ -1,7 +1,10 @@
 /**
  * Created by susansouza on 7/24/2015.
  */
-'use strict';
+
+(function(){
+  'use strict';
+
 angular
   .module('reader')
   .filter('truncateAtHyp', function(){
@@ -15,3 +18,4 @@ angular
       return trunc;
     };
   });
+}());
