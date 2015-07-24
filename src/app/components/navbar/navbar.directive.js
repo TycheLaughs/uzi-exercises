@@ -7,6 +7,6 @@
         restrict: 'E',
         templateUrl: 'app/components/navbar/navbar.html',
         replace:true
-      }
+      };
     });
 })();

@@ -5,7 +5,7 @@
 
     beforeEach(module('reader'));
 
-    var mainCtrl, scope, newsGetter, element;
+    var mainCtrl, scope, newsGetter;
 
     beforeEach(inject(function($controller, $rootScope,_newsGetter_){
       scope = $rootScope.$new();
