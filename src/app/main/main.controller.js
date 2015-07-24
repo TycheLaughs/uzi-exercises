@@ -12,7 +12,7 @@
 
       $scope.incrementNews = function(){
         $scope.selectedNews+=1;
-       // console.log($scope.selectedNews);
+
       };
 
       $scope.revealSideSelector = function(){
@@ -26,11 +26,5 @@
 
       $scope.toggleMdSelector = function (){
           $scope.showMdList = !($scope.showMdList);
-
-
       };
     });
-
-
-
-
