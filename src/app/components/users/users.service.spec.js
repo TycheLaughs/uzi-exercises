@@ -43,9 +43,9 @@
 
         describe('Function: removeSong(index)', function () {
             it('should remove the indicated user from the list', function () {
-                users.removeUser(1);
+                users.removeUser(0);
                 expect(users.getUsers().length).toBe(1);
-                expect(users.getUsers()[0].First).toBe('Sponge');
+                expect(users.getUsers()[0].First).toBe('Oliver');
 
             });
         });
