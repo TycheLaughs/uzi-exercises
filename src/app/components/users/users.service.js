@@ -49,10 +49,7 @@
         obj.Age = age;
         obj.Title = title;
         userList.push(obj);
-
-
       },
-
 
       updateUser : function (id, key, value) {
         var j;
@@ -64,9 +61,7 @@
         }
 
         for (j = 0; j < userList.length; j++) {
-          console.log(userList[j].ID);
           if (Number(userList[j].ID) === Number(id)) {
-            console.log('HOLY CRAP MATCHED ID');
             if (userList[j].hasOwnProperty(key)) {
               Object.defineProperty(userList[j], key, {
                 value: value
@@ -74,12 +69,10 @@
             }
           }
         }
-
       },
 
-       removeUser : function (index) {
+      removeUser : function (index) {
          userList.splice(index, 1);
-
         }
       };
     }
