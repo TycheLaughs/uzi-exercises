@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('usersOne', ['ngResource', 'ngRoute', 'ui.bootstrap']);
+    .module('usersOne', ['ui.bootstrap', 'ngRoute']);
 
 })();

@@ -3,10 +3,10 @@
     <div class="jumbotron text-center col-xs-6 col-xs-offset-3">
       <h3>Users:</h3>
       <ul class="list-unstyled">
-        <li ng-repeat="user in users">
+        <li ng-repeat="user in users track by $index">
           <div class="row">
             <span class="col-xs-4 col-xs-offset-3">{{user.Last}}, {{user.First}}</span>
-            <span class="col-xs-1"><a ng-click="removeUser(user.ID)">&times;</a></span>
+            <span class="col-xs-1"><a ng-click="removeUser($index)">&times;</a></span>
           </div>
           <div class="row">
           <ul class="list-unstyled col-xs-4 col-xs-offset-4">
@@ -45,7 +45,7 @@
       </form>
       <!-- edit user block here-->
     </div>
-    
+
     <div class="col-xs-12" ng-show="addToggle">
       <form>
         <label>First Name: <input type="text" ng-model="first"/></label>
