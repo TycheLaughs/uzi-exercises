@@ -1,22 +1,23 @@
 (function () {
     'use strict';
-    describe('Service: users', function () {
-        beforeEach(inject(module('usersOne')));
+
+  describe('Service: users', function () {
+        beforeEach(module('usersOne'));
         var users;
         beforeEach(inject(function (_users_) {
             users = _users_;
         }));
-    });
 
-    it('should have an array called userList with two obects in it', function () {
-        expect(users.getUsers().length).toBe(2);
-    });
 
-    it('should have a variable called i initialized at 1', function () {
-        expect(users.trackId()).toEqual(1);
-    });
+      it('should have an array called userList with two obects in it', function () {
+          expect(users.getUsers().length).toBe(2);
+      });
 
-    //functions
+      it('should have a variable called i initialized at 1', function () {
+          expect(users.trackId()).toEqual(1);
+      });
+
+      //functions
 
     describe('functions', function () {
         beforeEach(function () {
@@ -34,8 +35,8 @@
 
         describe('Function: updateUser(id, key, value)', function () {
             it('should update user information', function () {
-                users.updateUser(0, "first", "broly");
-                expect(users.getUsers[0].first).toBe("broly");
+                users.updateUser(0, "First", "broly");
+                expect(users.getUsers()[0].First).toBe("broly");
             });
 
         });
@@ -44,19 +45,13 @@
             it('should remove the indicated user from the list', function () {
                 users.removeUser(1);
                 expect(users.getUsers().length).toBe(1);
-                expect(users.getSongs()[0].First).toBe('Oliver');
+                expect(users.getUsers()[0].First).toBe('Sponge');
 
             });
         });
 
     });
 
-
-
-
-
-
-
-
+  });
 
 })();
