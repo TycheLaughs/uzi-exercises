@@ -21,19 +21,40 @@
     </div>
     <div class="col-xs-3">
       <div class="row">
-        <button class="btn btn-default">Add User</button>
+        <button class="btn btn-default" ng-click="toggleAdd()">Add User</button>
       </div>
       <div class="row">
-        <button class="btn btn-default">Update User Info</button>
+        <button class="btn btn-default" ng-click="toggleEdit()">Update User Info</button>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12" ng-show="editToggle && ! addToggle">
+      <form>
+        <label>User ID: <input type="text" ng-model="IDforEdit"/></label>
+        <label>Edit: <select ng-model="keyForEdit">
+          <option>First Name</option>
+          <option>Last Name</option>
+          <option>Sex</option>
+          <option>Age</option>
+          <option>Title</option>
+        </select></label>
+        <label>New Information: <input type="text" ng-model="valueForEdit"/></label>
+        <button class="btn btn-default" ng-click="updateUser(IDForEdit, keyForEdit, valueForEdit)">Submit Changes</button>
+
+      </form>
       <!-- edit user block here-->
     </div>
     <div class="col-xs-12" ng-show="!editToggle && addToggle">
-      <!-- add user block here-->
+      <form>
+        <label>First Name: <input type="text" ng-model="first"/></label>
+        <label>Last Name: <input type="text" ng-model="last"/></label>
+        <label>Sex: <input type="text" ng-model="sex"/></label>
+        <label>Age: <input type="text" ng-model="age"/></label>
+        <label>Title: <input type="text" ng-model="title"/></label>
+        <button class="btn btn-default" ng-click="addUser()">Add</button>
+
+      </form>
     </div>
 
   </div>
