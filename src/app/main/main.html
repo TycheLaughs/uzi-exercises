@@ -12,7 +12,7 @@
           <ul class="list-unstyled col-xs-4 col-xs-offset-4">
             <li>Sex: {{user.Sex}}</li>
             <li>Age: {{user.Age}}</li>
-            <li>Title: {{user.Sex}}</li>
+            <li>Title: {{user.Title}}</li>
             <li>ID: {{user.ID}}</li>
           </ul>
           </div>
@@ -29,9 +29,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12" ng-show="editToggle && ! addToggle">
+    <div class="col-xs-12" ng-show="editToggle">
       <form>
-        <label>User ID: <input type="text" ng-model="IDforEdit"/></label>
+        <label>User ID: <input type="text" ng-model="IDForEdit"/></label>
         <label>Edit: <select ng-model="keyForEdit">
           <option>First Name</option>
           <option>Last Name</option>
@@ -45,15 +45,15 @@
       </form>
       <!-- edit user block here-->
     </div>
-    <div class="col-xs-12" ng-show="!editToggle && addToggle">
+    
+    <div class="col-xs-12" ng-show="addToggle">
       <form>
         <label>First Name: <input type="text" ng-model="first"/></label>
         <label>Last Name: <input type="text" ng-model="last"/></label>
         <label>Sex: <input type="text" ng-model="sex"/></label>
         <label>Age: <input type="text" ng-model="age"/></label>
         <label>Title: <input type="text" ng-model="title"/></label>
-        <button class="btn btn-default" ng-click="addUser()">Add</button>
-
+        <button class="btn btn-default" ng-click="createUsers()">Add</button>
       </form>
     </div>
 
