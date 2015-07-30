@@ -12,6 +12,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // bower:scss
 // endbower
 
+body{
+  font-size: 1.2em;
+  overflow-x:hidden;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -28,15 +32,38 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 }
 
 .jumbotron{
-
+  position:fixed;
+  width:85%;
   height:88vh;
-
+  z-index:0;
 }
 
+.content{
+  z-index:1;
+  height:74vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
 hr{
 
   border:2px solid gray;
 }
+
+.bottomMargin{
+  height:12vh;
+  width:100%;
+  position:fixed;
+  background-color:white;
+  z-index:2;
+  overflow:none;
+  top:97vh;
+
+}
+
+.enterStuff{
+  z-index:2;
+}
+
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
