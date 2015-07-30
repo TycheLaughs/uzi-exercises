@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('musicCatalog', ['ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap', 'countrySelect']);
+    .module('musicCatalog', ['ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap']);
 
 })();

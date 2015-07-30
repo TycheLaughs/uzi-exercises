@@ -27,15 +27,15 @@
 
       };
 
-      $scope.searchPurchase= function(artist, song, country){
-        if(!country){
-          country = 'US';
-        }
+      $scope.searchPurchase= function(artist, song){
+
+          var country = 'US';
+
         lastChatter.getBuyLinks(artist, song,country).then(function(response){
 
 
           $scope.downloadSellers = response.affiliations.physicals.affiliation;
-          console.log(JSON.stringify($scope.downloadSellers));
+          //console.log(JSON.stringify($scope.downloadSellers));
           $scope.physicalSellers = response.affiliations.downloads.affiliation;
 
         }, function(error){
