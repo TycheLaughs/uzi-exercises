@@ -92,8 +92,10 @@
 
     });
 
-    describe('Function: searchPurchase(artist, song)', function () {
+    describe('Function: searchPurchase(index artist)', function () {
       beforeEach(function () {
+        scope.topTracks = [];
+        scope.topTracks[0] = {};
         httpBackend.when("GET", "http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=Cher&autocorrect=1&country=US&format=json&method=track.getBuyLinks&track=Believe").respond(
           {
             "affiliations":{
@@ -129,9 +131,10 @@
       });
 
       it('should call the getBuyLinks function from the lastChatter service to populate the physicalSellers and downloadSellers objects on the scope', function () {
-        var res;
         httpBackend.expectGET("http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=Cher&autocorrect=1&country=US&format=json&method=track.getBuyLinks&track=Believe");
-        scope.searchPurchase("Cher", "Believe");
+
+        scope.topTracks[0].name = "Believe";
+        scope.searchPurchase(0, "Cher");
         httpBackend.flush();
         expect(scope.downloadSellers).toBe("Cher");
         expect(scope.physicalSellers).toBe("Cher");
@@ -140,9 +143,9 @@
       });
 
       it('should display and error when getBuyLinks from lastChatter is given incorrect arguments', function () {
-        var res;
         httpBackend.expectGET("http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=Cher&autocorrect=1&country=US&format=json&method=track.getBuyLinks&track=");
-        scope.searchPurchase("Cher", "");
+        scope.topTracks[0].name = "";
+        scope.searchPurchase(0,"Cher");
         httpBackend.flush();
         expect(scope.downloadSellers).toBe("");
         expect(scope.physicalSellers).toBe("Couldn't find sellers for ");
