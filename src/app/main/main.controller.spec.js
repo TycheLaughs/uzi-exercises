@@ -92,7 +92,7 @@
 
     });
 
-    describe('Function: searchPurchase(index artist)', function () {
+    describe('Function: searchPurchase(index, artist)', function () {
       beforeEach(function () {
         scope.topTracks = [];
         scope.topTracks[0] = {};
