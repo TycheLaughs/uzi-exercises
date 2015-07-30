@@ -7,7 +7,7 @@
       $scope.artist = '';
       $scope.artistCorrect = '';
       $scope.topTracks = '';
-
+      $scope.showBuy = '';
       $scope.physicalSellers = '';
       $scope.downloadSellers = '';
 
@@ -27,10 +27,10 @@
 
       };
 
-      $scope.searchPurchase= function(artist, song){
-
+      $scope.searchPurchase= function(index, artist){
+          var song = $scope.topTracks[index].name;
           var country = 'US';
-
+          $scope.showBuy = index;
         lastChatter.getBuyLinks(artist, song,country).then(function(response){
 
 

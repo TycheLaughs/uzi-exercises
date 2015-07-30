@@ -29,23 +29,23 @@
             <span class="songtitle">{{song.name}}</span>
               </span>
             <span class="col-xs-6">
-              <a ng-click="searchPurchase(artistCorrect, song.name, country)">Buy</a>
+              <a ng-click="searchPurchase($index, artistCorrect)">Buy</a>
 
 
             </span>
-            <div class="text-center row">
-              <span class="col-xs-6 col-xs-offset-6">
+            <div class="row">
+              <span class="col-xs-6 col-xs-offset-6" ng-show="showBuy===$index">
             <p>Get the Disk:</p>
-            <ul class="list-unstyled">
-              <li ng-repeat="sale in physicalSellers">
+            <ul class="list-unstyled list-inline">
+              <li ng-repeat="sale in physicalSellers track by $index">
                 <a ng-href="{{sale.buyLink}}">
                   <img ng-src="{{sale.supplierIcon}}"/>
                 </a>
               </li>
             </ul>
             <p>Download:</p>
-            <ul class="list-unstyled">
-              <li ng-repeat="sale in downloadSellers">
+            <ul class="list-unstyled list-inline">
+              <li ng-repeat="sale in downloadSellers track by $index">
                 <a ng-href="{{sale.buyLink}}" >
                   <img ng-src="{{sale.supplierIcon}}"/>
                 </a>
