@@ -1,0 +1,23 @@
+<div class="container">
+
+
+  <div class="jumbotron text-center">
+    <div class="row">
+      <h3>Find tracks</h3>
+      <form ng-submit="search()">
+        <label>Enter Artist: <input type="text" ng-model="artist"/></label>
+
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 text-left">
+        <h4 ng-if="artist.length">Top Songs by: {{artist}}</h4>
+        <hr ng-if="artist.length"/>
+        <ul class="row list-unstyled">
+          <li ng-repeat="song in tracks track by $index">{{song}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
