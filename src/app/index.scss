@@ -16,6 +16,13 @@ body{
   font-size: 1.2em;
   overflow-x:hidden;
 }
+hr{
+
+  border:2px solid gray;
+}
+li{
+  font-size:1.1em;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -34,7 +41,7 @@ body{
 .jumbotron{
   position:fixed;
   width:85%;
-  height:88vh;
+  height:89vh;
   z-index:0;
 }
 
@@ -43,10 +50,6 @@ body{
   height:74vh;
   overflow-y:auto;
   overflow-x:hidden;
-}
-hr{
-
-  border:2px solid gray;
 }
 
 .bottomMargin{
@@ -64,6 +67,10 @@ hr{
   z-index:2;
 }
 
+
+.songtitle{
+  font-size:1.3em;
+}
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
