@@ -10,6 +10,7 @@
 
       $scope.physicalSellers = '';
       $scope.downloadSellers = '';
+
       $scope.search = function(){
 
         $scope.topTracks = lastChatter.getTopTracks($scope.artist).then(function(response){
@@ -18,7 +19,8 @@
           $scope.artistCorrect =  $scope.topTracks[0].artist.name;
 
         }, function(error){
-
+            $scope.artistCorrect = "No artist found by the name of "+ $scope.artist;
+           console.log('Server at Last.fm sent the response: '+ error.statusText + ' Status code: '+ error.status);
 
         });
         $scope.artist = '';
@@ -37,7 +39,8 @@
           $scope.physicalSellers = response.affiliations.downloads.affiliation;
 
         }, function(error){
-
+          $scope.physicalSellers = "Couldn't find sellers for "+ song;
+          console.log('Server at Last.fm sent the response: '+ error.statusText + ' Status code: '+ error.status);
 
         });
 

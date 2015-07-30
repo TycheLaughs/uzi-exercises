@@ -12,6 +12,9 @@
         return {
 
           getTopTracks: function (artist) {
+            if (!artist) {
+              artist = '';
+            }
             return chatter.get({
               method: "artist.getTopTracks",
               artist: artist,
@@ -19,6 +22,7 @@
               api_key: apiKey,
               format: "json"
             }).$promise;
+
 
           },
 

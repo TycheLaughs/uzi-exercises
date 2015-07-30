@@ -53,7 +53,9 @@ module.exports = function(config) {
 
     preprocessors: {
       'src/**/*.html': ['ng-html2js']
+
     }
+
   };
 
   // This block is needed to execute Chrome on Travis
