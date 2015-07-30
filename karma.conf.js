@@ -7,13 +7,13 @@ var _ = require('lodash');
 var wiredep = require('wiredep');
 
 function listFiles() {
-  var wiredepOptions = _.extend({}, conf.wiredep, {
-    dependencies: true,
-    devDependencies: true
-  });
+    var wiredepOptions = _.extend({}, conf.wiredep, {
+        dependencies: true,
+        devDependencies: true
+    });
 
-  return wiredep(wiredepOptions).js
-    .concat([
+    return wiredep(wiredepOptions).js
+        .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
       path.join(conf.paths.src, '/app/**/*.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
@@ -22,55 +22,60 @@ function listFiles() {
     ]);
 }
 
-module.exports = function(config) {
+module.exports = function (config) {
 
-  var configuration = {
-    files: listFiles(),
+    var configuration = {
+        files: listFiles(),
 
-    singleRun: true,
+        singleRun: true,
 
-    autoWatch: false,
+        autoWatch: false,
 
-    frameworks: ['jasmine', 'angular-filesort'],
+        frameworks: ['jasmine', 'angular-filesort'],
 
-    angularFilesort: {
-      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
-    },
+        angularFilesort: {
+            whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
+        },
 
-    ngHtml2JsPreprocessor: {
-      stripPrefix: 'src/',
-      moduleName: 'musicCatalog'
-    },
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'src/',
+            moduleName: 'musicCatalog'
+        },
 
-    browsers : ['PhantomJS'],
+        browsers: ['PhantomJS'],
+        
+        reporters: ['coverage', 'progress'],
 
-    plugins : [
+        plugins: [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-coverage'
     ],
 
-    preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+        preprocessors: {
+            'src/**/*.html': ['ng-html2js'],
+            'src/app/components/lastChatter/lastChatter.service.js': ['coverage'],
+            'src/app/main/main.controller.js': ['coverage']
 
+        }
+
+    };
+
+    // This block is needed to execute Chrome on Travis
+    // If you ever plan to use Chrome and Travis, you can keep it
+    // If not, you can safely remove it
+    // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
+    if (configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
+        configuration.customLaunchers = {
+            'chrome-travis-ci': {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        };
+        configuration.browsers = ['chrome-travis-ci'];
     }
 
-  };
-
-  // This block is needed to execute Chrome on Travis
-  // If you ever plan to use Chrome and Travis, you can keep it
-  // If not, you can safely remove it
-  // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
-  if(configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
-    configuration.customLaunchers = {
-      'chrome-travis-ci': {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    };
-    configuration.browsers = ['chrome-travis-ci'];
-  }
-
-  config.set(configuration);
+    config.set(configuration);
 };
