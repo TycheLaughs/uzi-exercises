@@ -3,37 +3,47 @@
 
   angular
     .module('musicCatalog')
-    .controller('MainController', MainController);
+    .controller('MainController', function($scope, lastChatter) {
+      $scope.artist = '';
+      $scope.artistCorrect = '';
+      $scope.topTracks = '';
 
-  /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
-    var vm = this;
+      $scope.physicalSellers = '';
+      $scope.downloadSellers = '';
+      $scope.search = function(){
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1438257162007;
-    vm.showToastr = showToastr;
+        $scope.topTracks = lastChatter.getTopTracks($scope.artist).then(function(response){
+          $scope.topTracks = response.toptracks.track;
+          //console.log(JSON.stringify($scope.topTracks));
+          $scope.artistCorrect =  $scope.topTracks[0].artist.name;
 
-    activate();
+        }, function(error){
 
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
 
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
+        });
+        $scope.artist = '';
 
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+      };
 
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
-  }
+      $scope.searchPurchase= function(artist, song, country){
+        if(!country){
+          country = 'US';
+        }
+        lastChatter.getBuyLinks(artist, song,country).then(function(response){
+
+
+          $scope.downloadSellers = response.affiliations.physicals.affiliation;
+          console.log(JSON.stringify($scope.downloadSellers));
+          $scope.physicalSellers = response.affiliations.downloads.affiliation;
+
+        }, function(error){
+
+
+        });
+
+      };
+
+
+
+  });
 })();
