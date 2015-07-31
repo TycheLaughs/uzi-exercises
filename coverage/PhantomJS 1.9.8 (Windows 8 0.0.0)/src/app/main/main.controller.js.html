@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">./src/app/main/main.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">45.83% <small>(11 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">37.5% <small>(3 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">45.83% <small>(11 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">96.15% <small>(25 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.15% <small>(25 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">./src/app/main/</a> &#187; main.controller.js</div>
@@ -77,7 +77,10 @@
 50
 51
 52
-53</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+53
+54
+55
+56</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -92,101 +95,107 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10</span>
 <span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
-  'use strict';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function () {
+    'use strict';
 &nbsp;
-  angular
-    .module('musicCatalog')
-    .controller('MainController', function($scope, lastChatter) {
-      $scope.artist = '';
-      $scope.artistCorrect = '';
-      $scope.topTracks = '';
-      $scope.showBuy = '';
-      $scope.physicalSellers = '';
-      $scope.downloadSellers = '';
+    angular
+        .module('musicCatalog')
+        .controller('MainController', function ($scope, lastChatter) {
+            $scope.artist = '';
+            $scope.artistCorrect = '';
+            $scope.topTracks = '';
+            $scope.showBuy = '';
+            $scope.physicalSellers = '';
+            $scope.downloadSellers = '';
 &nbsp;
-      $scope.search = <span class="fstat-no" title="function not covered" >function(){</span>
+            $scope.search = function () {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        $scope.topTracks = lastChatter.getTopTracks($scope.artist).then(<span class="fstat-no" title="function not covered" >function(response){</span></span>
-<span class="cstat-no" title="statement not covered" >          $scope.topTracks = response.toptracks.track;</span>
-          //console.log(JSON.stringify($scope.topTracks));
-<span class="cstat-no" title="statement not covered" >          $scope.artistCorrect =  $scope.topTracks[0].artist.name;</span>
+                lastChatter.getTopTracks($scope.artist).then(function (response) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (response.error) {
+<span class="cstat-no" title="statement not covered" >                        $scope.artistCorrect = response.message;</span>
+                    } else {
+                        $scope.topTracks = response.toptracks.track;
+                        //console.log(JSON.stringify($scope.topTracks));
+                        $scope.artistCorrect = $scope.topTracks[0].artist.name;
+                    }
 &nbsp;
-        }, <span class="fstat-no" title="function not covered" >function(error){</span>
-<span class="cstat-no" title="statement not covered" >            $scope.artistCorrect = "No artist found by the name of "+ $scope.artist;</span>
-<span class="cstat-no" title="statement not covered" >           console.log('Server at Last.fm sent the response: '+ error.statusText + ' Status code: '+ error.status);</span>
+                }, function (error) {
+                    $scope.artistCorrect = "No artist found by the name of " + $scope.artist;
+                    console.log('Server at Last.fm sent the response: ' + error.statusText + ' Status code: ' + error.status);
+&nbsp;
+                });
+                $scope.artist = '';
+&nbsp;
+            };
+&nbsp;
+            $scope.searchPurchase = function (index, artist) {
+                var song = $scope.topTracks[index].name;
+                var country = 'US';
+                $scope.showBuy = index;
+                lastChatter.getBuyLinks(artist, song, country).then(function (response) {
+&nbsp;
+&nbsp;
+                    $scope.downloadSellers = response.affiliations.physicals.affiliation;
+                    //console.log(JSON.stringify($scope.downloadSellers));
+                    $scope.physicalSellers = response.affiliations.downloads.affiliation;
+&nbsp;
+                }, function (error) {
+                    $scope.physicalSellers = "Couldn't find sellers for " + song;
+                    console.log('Server at Last.fm sent the response: ' + error.statusText + ' Status code: ' + error.status);
+&nbsp;
+                });
+&nbsp;
+            };
+&nbsp;
+&nbsp;
 &nbsp;
         });
-<span class="cstat-no" title="statement not covered" >        $scope.artist = '';</span>
-&nbsp;
-      };
-&nbsp;
-      $scope.searchPurchase= function(index, artist){
-          var song = $scope.topTracks[index].name;
-<span class="cstat-no" title="statement not covered" >          var country = 'US';</span>
-<span class="cstat-no" title="statement not covered" >          $scope.showBuy = index;</span>
-<span class="cstat-no" title="statement not covered" >        lastChatter.getBuyLinks(artist, song,country).then(<span class="fstat-no" title="function not covered" >function(response){</span></span>
-&nbsp;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          $scope.downloadSellers = response.affiliations.physicals.affiliation;</span>
-          //console.log(JSON.stringify($scope.downloadSellers));
-<span class="cstat-no" title="statement not covered" >          $scope.physicalSellers = response.affiliations.downloads.affiliation;</span>
-&nbsp;
-        }, <span class="fstat-no" title="function not covered" >function(error){</span>
-<span class="cstat-no" title="statement not covered" >          $scope.physicalSellers = "Couldn't find sellers for "+ song;</span>
-<span class="cstat-no" title="statement not covered" >          console.log('Server at Last.fm sent the response: '+ error.statusText + ' Status code: '+ error.status);</span>
-&nbsp;
-        });
-&nbsp;
-      };
-&nbsp;
-&nbsp;
-&nbsp;
-  });
-})();
-&nbsp;</pre></td></tr>
+})();</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 30 2015 16:16:10 GMT-0400 (Eastern Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 31 2015 00:20:58 GMT-0400 (Eastern Daylight Time)</div>
 </div>
 <script src="../../../prettify.js"></script>
 <script>
