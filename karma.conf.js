@@ -43,23 +43,35 @@ module.exports = function (config) {
         },
 
         browsers: ['PhantomJS'],
-        
+
         reporters: ['coverage', 'progress'],
 
         plugins: [
-      'karma-phantomjs-launcher',
-      'karma-angular-filesort',
-      'karma-jasmine',
-      'karma-ng-html2js-preprocessor',
-      'karma-coverage'
-    ],
+          'karma-phantomjs-launcher',
+          'karma-angular-filesort',
+          'karma-jasmine',
+          'karma-ng-html2js-preprocessor',
+          'karma-coverage'
+        ],
 
         preprocessors: {
             'src/**/*.html': ['ng-html2js'],
             'src/app/components/lastChatter/lastChatter.service.js': ['coverage'],
             'src/app/main/main.controller.js': ['coverage']
 
-        }
+        },
+      coverageReporter: {
+        reporters:[
+          {
+            type: 'html',
+            dir: 'coverage/'
+          },
+          {
+            type: 'text'
+          }
+        ]
+
+      }
 
     };
 

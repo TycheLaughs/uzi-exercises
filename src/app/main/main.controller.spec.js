@@ -67,10 +67,10 @@
          }
       ]
    }
-}                       
+}
           );
         httpBackend.when("GET", "http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=&autocorrect=1&format=json&method=artist.getTopTracks").respond(function() {
-          return [400, {"error":6,"message":"The artist you supplied could not be found","links":[]}];
+          return [400, {"error":6}];
         });
 
       });
@@ -94,7 +94,8 @@
           scope.search();
           httpBackend.expectGET("http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=&autocorrect=1&format=json&method=artist.getTopTracks");
           httpBackend.flush();
-          expect(scope.artistCorrect.indexOf("No artist found by the name of ")).not.toEqual(-1);
+          expect(scope.artistCorrect).toBe("No artist found by the name of ");
+
 
 
       });

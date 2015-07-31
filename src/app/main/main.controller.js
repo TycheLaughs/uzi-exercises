@@ -14,13 +14,9 @@
             $scope.search = function () {
 
                 lastChatter.getTopTracks($scope.artist).then(function (response) {
-                    if (response.error) {
-                        $scope.artistCorrect = response.message;
-                    } else {
                         $scope.topTracks = response.toptracks.track;
                         //console.log(JSON.stringify($scope.topTracks));
                         $scope.artistCorrect = $scope.topTracks[0].artist.name;
-                    }
 
                 }, function (error) {
                     $scope.artistCorrect = "No artist found by the name of " + $scope.artist;
