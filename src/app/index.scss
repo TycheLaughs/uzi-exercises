@@ -72,6 +72,21 @@ li{
 .songtitle{
   font-size:1.3em;
 }
+
+a{
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: .2em;
+
+}
+.buyStuff{
+  margin-bottom: 1.1em;
+
+}
+
+.row{
+  margin: .7em;
+}
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
