@@ -94,7 +94,7 @@
           scope.search();
           httpBackend.expectGET("http://ws.audioscrobbler.com/2.0?api_key=f3e6bff38901e60e008579851e02440a&artist=&autocorrect=1&format=json&method=artist.getTopTracks");
           httpBackend.flush();
-          expect(scope.artistCorrect).toBe("No artist found by the name of ");
+          expect(scope.artistCorrect.indexOf("No artist found by the name of ")).not.toEqual(-1);
 
 
 
