@@ -3,7 +3,8 @@ Project exercises and schoolwork
 
 
 ###[/reader](http://tychelaughs.github.io/uzi-exercises/reader/dist/#/)
-
+  -an exercise to familiarize myself with ng-resource and iframes
+  
 ###/users-one
   -a quick CRUD exercise with @ajoginipally
   
