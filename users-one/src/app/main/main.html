@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="jumbotron text-center col-xs-6 col-xs-offset-3">
+      <h3>Users:</h3>
+      <ul class="list-unstyled">
+        <li ng-repeat="user in users track by $index">
+          <div class="row">
+            <span class="col-xs-4 col-xs-offset-3">{{user.Last}}, {{user.First}}</span>
+            <span class="col-xs-1"><a ng-click="removeUser($index)">&times;</a></span>
+          </div>
+          <div class="row">
+          <ul class="list-unstyled col-xs-4 col-xs-offset-4">
+            <li>Sex: {{user.Sex}}</li>
+            <li>Age: {{user.Age}}</li>
+            <li>Title: {{user.Title}}</li>
+            <li>ID: {{user.ID}}</li>
+          </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-3">
+      <div class="row">
+        <button class="btn btn-default" ng-click="toggleAdd()">Add User</button>
+      </div>
+      <div class="row">
+        <button class="btn btn-default" ng-click="toggleEdit()">Update User Info</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" ng-show="editToggle">
+      <form>
+        <label>User ID: <input type="text" ng-model="IDForEdit"/></label>
+        <label>Edit: <select ng-model="keyForEdit">
+          <option>First Name</option>
+          <option>Last Name</option>
+          <option>Sex</option>
+          <option>Age</option>
+          <option>Title</option>
+        </select></label>
+        <label>New Information: <input type="text" ng-model="valueForEdit"/></label>
+        <button class="btn btn-default" ng-click="updateUser(IDForEdit, keyForEdit, valueForEdit)">Submit Changes</button>
+
+      </form>
+      <!-- edit user block here-->
+    </div>
+
+    <div class="col-xs-12" ng-show="addToggle">
+      <form>
+        <label>First Name: <input type="text" ng-model="first"/></label>
+        <label>Last Name: <input type="text" ng-model="last"/></label>
+        <label>Sex: <input type="text" ng-model="sex"/></label>
+        <label>Age: <input type="text" ng-model="age"/></label>
+        <label>Title: <input type="text" ng-model="title"/></label>
+        <button class="btn btn-default" ng-click="createUsers()">Add</button>
+      </form>
+    </div>
+
+  </div>
+</div>
