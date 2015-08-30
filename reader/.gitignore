@@ -3,6 +3,6 @@ bower_components/
 .sass-cache/
 .idea/
 .tmp/
-dist/
+
 src/favicon.ico
 .idea
