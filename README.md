@@ -10,6 +10,3 @@ Project exercises and schoolwork
   
 ###/music-catalog
   -trying out the Last.fm API
-
-###/firstSPA
-  -two class exercises for learning about single-page browser applications
